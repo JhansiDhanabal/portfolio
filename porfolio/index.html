@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhansi Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}
+html {
+    scroll-behavior: smooth;
+}
+        .contact-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-icons a {
+            color: #333;
+            font-size: 2em;
+            transition: color 0.3s;
+        }
+        .contact-icons a:hover {
+            color: #007bff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav {
+            justify-content: flex-end;
+        }
+        .home {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        .home img {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            /* Remove blue outline */
+            border: none;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-outline-primary {
+            color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .about {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+    text-align: left;
+}
+
+.about img {
+    border-radius: 10px;
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.about-photo {
+    border-radius: 10px;
+    height: 300px; /* Increase the height of the photo */
+    width: auto; /* Auto-adjust width to maintain aspect ratio */
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.about-content {
+    justify-content: center;
+    max-width: 600px;
+}
+
+.skills-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .skills-cloud {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-node {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skill-node:hover {
+    transform: scale(1.1);
+}
+.experience-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 350px; /* Ensure equal height for all cards */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card-img {
+    height: 50%; /* Show the top half of the image */
+    background-size: cover;
+    background-position: top;
+    border-top-left-radius: 5px; /* Adjust for rounded corners if needed */
+    border-top-right-radius: 5px; /* Adjust for rounded corners if needed */
+}
+
+.card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Ensure title text is readable */
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333; /* Ensure card text is readable */
+}
+
+.project-link {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        display: flex;
+        align-items: stretch;
+    }
+    .project-card {
+        width: 100%;
+    }
+}
+section {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+.styled-heading {
+    font-size: 2em; /* Increase the font size */
+    font-weight: bold; /* Make the font bold */
+    font-style: italic; /* Make the font italic */
+    color: #2c3e50; /* Set a dark, attractive color */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some space above */
+    margin-bottom: 20px; /* Add some space below */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle text shadow */
+    font-family: 'Arial Black', Gadget, sans-serif; /* Use a strong, bold font */
+}
+
+
+        footer {
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .category {
+    margin-top: 20px;
+}
+.subcategory {
+    margin-left: 20px;
+}
+.active-project {
+    font-weight: bold;
+    color: #007bff;
+}
+.video-card {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 75%;
+    transition: transform 0.5s ease-in-out;
+}
+.video-card-title {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.overlay video {
+    width: 90%;
+    height: auto;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.overlay-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+        /* Custom styles end here */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#"><img style="height:70px" src="jhansi.jpg" alt="jhansi" class="logo"></a><h4 class="styled-heading">Jhansi D</h4>
+
+            <!-- Toggler/collapsible Button for smaller screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="home">
+        <div class="container">
+            <div style="height: 100px;"></div>
+            <img src="profile5.jpg"  alt="Jhansi's Photo">
+            <h1>Jhansi Dhanabal</h1>
+            <p>Final Year Computer Science and Engineering Student</p>
+            <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            <div class="mt-3">
+                <a href="https://www.linkedin.com/in/jhansi-d/" class="btn btn-outline-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/JhansiDhanabal" class="btn btn-outline-dark"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://drive.google.com/drive/folders/1EC5zSuTWKxiq9pcwf304OYj0FSgNfzhS?usp=sharing" class="btn btn-outline-secondary"><i class="fas fa-folder-open"></i> Certificates</a>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div style="height: 100px;"></div>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="profile4.jpg" alt="Jhansi's Photo" class="about-photo">
+            </div>
+            <div class="col-md-6">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>I am a final year student in Computer Science and Engineering at Velammal College of Engineering and Technology, with a passion for problem-solving and technology. I have completed various projects, during my course work. My short-term goal is to start my career in an organization where I can gain practical knowledge, and my long-term goal is to achieve a high position in my profession. In my free time, I enjoy coding on coding platform like LeetCode, Skillrack  to continuously improve my problem solving skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <div style="height: 100px;"></div>
+        <h2>Skills</h2>
+        <div style="height: 10px;"></div>
+        <div class="skills-cloud" id="skillsCloud">
+            <!-- Skill nodes will be dynamically generated here -->
+        </div>
+        <div style="height: 60px;"></div>
+    </div>
+</section>
+<script>
+    // Skills data with proficiency levels (0 to 100)
+    const skillsData = [
+        { name: 'Java', proficiency: 90 },
+        { name: 'C', proficiency: 80 },
+        { name: 'Data Structures and Algorithms', proficiency: 85 },
+        { name: 'Spring Boot', proficiency: 85 },
+        { name: 'HTML', proficiency: 70 },
+        { name: 'CSS', proficiency: 70 },
+        { name: 'Bootstrap', proficiency: 70 },
+        { name: 'Python', proficiency: 85 },
+        { name: 'JavaScript', proficiency: 75 },
+
+        { name: 'SQL', proficiency: 80 },
+        { name: 'React.js', proficiency: 75 },
+        { name: 'MySQL', proficiency: 80 },
+        { name: 'AWS', proficiency: 75 },
+        { name: 'OOP', proficiency: 90 },
+        { name: 'Spreadsheets', proficiency: 90 },
+        { name: 'Data Analysis', proficiency: 80 },
+        { name: 'Typing', proficiency: 95 },
+        { name: 'Word Processor', proficiency: 90 },
+        { name: 'Problem-Solving', proficiency: 90 },
+        { name: 'Teamwork', proficiency: 85 },
+        { name: 'Communication', proficiency: 80 },
+        { name: 'Consistency', proficiency: 90 },
+
+        // Add more skills as needed
+    ];
+
+    // Function to dynamically generate skill nodes based on proficiency level
+    function generateSkillNodes() {
+        const skillsCloud = document.getElementById('skillsCloud');
+        skillsCloud.innerHTML = ''; // Clear previous nodes
+
+        skillsData.forEach(skill => {
+            const skillNode = document.createElement('div');
+            skillNode.textContent = skill.name;
+            skillNode.className = 'skill-node';
+            skillNode.style.fontSize = `${10 + (skill.proficiency / 10)}px`; // Adjust font size based on proficiency
+            skillsCloud.appendChild(skillNode);
+        });
+    }
+
+    // Call the function to generate skill nodes
+    generateSkillNodes();
+
+     // JavaScript for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+</script>
+<!-- Experience Section -->
+<section id="experience" class="experience-section">
+    <div class="container">
+        <div style="height: 60px;"></div>
+        <h2 style="text-align: center;">Experience</h2>
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <!-- CDW’s STEP – ROAD TO REACT -->
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">CDW’s STEP – ROAD TO REACT WORKSHOP</h3>
+                        <p class="card-text">November 2023</p>
+                        <p class="card-text">Proficiency in HTML, CSS, JavaScript, and React was notably acquired and refined through the development of a hands-on project titled ‘Restaurant Management System’.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HEALTHCARE DATATECH PROJECT -->
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">HEALTHCARE DATATECH PROJECT</h3>
+                        <p class="card-text">July – September 2023</p>
+                        <p class="card-text">Build a predictive machine learning model for patient readmissions and contributed a chapter on diabetes to ‘Meta Health,’ under MIT Square Services and Federal University of Santa Maria collaboration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NAAN MUDHALVAN INTERNSHIP PROGRAM -->
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">NAAN MUDHALVAN INTERNSHIP PROGRAM</h3>
+                        <p class="card-text">April – May 2023</p>
+                        <p class="card-text">Proficiency in Python programming and Data Science was acquired through hands-on projects, with the implementation of Machine Learning techniques using standard libraries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials Section 
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <div style="height: 100px;"></div>
+        <h2>Testimonials</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Jhansi is a highly motivated and skilled individual. Her ability to solve complex problems is exceptional."</p>
+                        <p class="card-text"><strong>- Professor XYZ</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Working with Jhansi has been a pleasure. She is dedicated and always delivers high-quality work."</p>
+                        <p class="card-text"><strong>- Colleague ABC</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <!--
+    <div class="container">
+        <div style="height: 100px;"></div>
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="https://github.com/JhansiDhanabal/Taxi-Booking-Application-Java-" class="project-link" target="_blank">
+                    <div class="card project-card">
+                        <div class="project-card-img" style="background-image: url('taxi_booking.png');"></div>
+                        <div class="card-body">
+                            <h3 class="card-title font-weight-bold">TAXI BOOKING APPLICATION</h3>
+                            <p class="card-text">Create Java-based taxi booking system with real-time monitoring and revenue tracking.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://github.com/JhansiDhanabal/engineering-counselling" class="project-link" target="_blank">
+                    <div class="card project-card">
+                        <div class="project-card-img" style="background-image: url('counselling_database.png');"></div>
+                        <div class="card-body">
+                            <h3 class="card-title font-weight-bold">COUNSELLING DATABASE MANAGEMENT</h3>
+                            <p class="card-text">Designed and developed robust online counselling management system using JSP and SQL.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://github.com/JhansiDhanabal/ABSENTEES-REPORT" class="project-link" target="_blank">
+                    <div class="card project-card">
+                        <div class="project-card-img" style="background-image: url('leave_report_system.png');"></div>
+                        <div class="card-body">
+                            <h3 class="card-title font-weight-bold">LEAVE REPORT GENERATING SYSTEM</h3>
+                            <p class="card-text">Developed leave report system utilizing Java Swing, AWT, and iTextPDF technologies, automating the generation of absence reports for students.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    -->
+    <div class="container">
+        <div class="row">
+            <div style="height: 100px;"></div>
+            <h2 style="text-align: center;">Projects</h2>
+            <div class="col-md-4">
+                <div class="list-group" id="projectsList">
+                    <div class="category">
+                        <button class="btn btn-primary category-btn" type="button" data-bs-toggle="collapse" data-bs-target="#springBootDropdown" aria-expanded="true" aria-controls="springBootDropdown">
+                            Spring Boot Application
+                        </button>
+                        <div id="springBootDropdown" class="collapse show">
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/role_based_authentication.mp4">Role Based Authentication</a>
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/ecommerce_application.mp4">Ecommerce Application</a>
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/book_store_management.mp4">Book Store Management</a>
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/employee_management_system.mp4">Employee Management System</a>
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/student_management_system.mp4">Student Management System</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <button class="btn btn-primary category-btn" type="button" data-bs-toggle="collapse" data-bs-target="#javaSwingDropdown" aria-expanded="true" aria-controls="javaSwingDropdown">
+                            Java Swing Application
+                        </button>
+                        <div id="javaSwingDropdown" class="collapse show">
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/leave_report_generator.mp4">Leave Report Generator</a>
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/restaurant_management_system.mp4">Restaurant Management System</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <button class="btn btn-primary category-btn" type="button" data-bs-toggle="collapse" data-bs-target="#javaAppDropdown" aria-expanded="true" aria-controls="javaAppDropdown">
+                            Java Application
+                        </button>
+                        <div id="javaAppDropdown" class="collapse show">
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/call_taxi_booking.mp4">Call Taxi Booking Application</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <button class="btn btn-primary category-btn" type="button" data-bs-toggle="collapse" data-bs-target="#jspDropdown" aria-expanded="true" aria-controls="jspDropdown">
+                            JSP
+                        </button>
+                        <div id="jspDropdown" class="collapse show">
+                            <a class="list-group-item list-group-item-action subcategory project" href="#" data-video="videos/counselling_management_system.mp4">Counselling Management System</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="video-card" id="videoCard">
+                    <div class="video-card-title" id="videoTitle">Student Management System</div>
+                    <div class="video-wrapper">
+                        <video id="portfolioVideo" class="video" muted></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="overlay" id="overlay">
+        <button class="close-btn" id="closeBtn">X</button>
+        <div class="overlay-title" id="overlayTitle"></div>
+        <video id="fullVideo" controls></video>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const videos = [
+    { title: "Role Based Authentication - Spring Boot Application", src: "videos/role_based_authentication.mp4", playbackRate: 10 },
+    { title: "Ecommerce Application - Spring Boot Application", src: "videos/ecommerce_application.mp4", playbackRate: 15 },
+    { title: "Book Store Management - Spring Boot Application", src: "videos/book_store_management.mp4", playbackRate: 8 },
+    { title: "Employee Management System - Spring Boot Application", src: "videos/employee_management_system.mp4", playbackRate: 7 },
+    { title: "Student Management System - Spring Boot Application", src: "videos/student_management_system.mp4", playbackRate: 7 },
+
+    { title: "Leave Report Generator - Java Swing Application", src: "videos/leave_report_generator.mp4", playbackRate: 10 },
+    { title: "Restaurant Management System - Java Swing Application", src: "videos/restaurant_management_system.mp4", playbackRate: 11 },
+
+    { title: "Call Taxi Booking Application - Java Application", src: "videos/call_taxi_booking.mp4", playbackRate: 9 },
+
+    { title: "Counselling Management System - JSP", src: "videos/counselling_management_system.mp4", playbackRate: 7 }
+];
+    
+        const videoElement = document.getElementById('portfolioVideo');
+        const videoTitle = document.getElementById('videoTitle');
+        const videoCard = document.getElementById('videoCard');
+        const overlay = document.getElementById('overlay');
+        const fullVideo = document.getElementById('fullVideo');
+        const closeBtn = document.getElementById('closeBtn');
+        const overlayTitle = document.getElementById('overlayTitle');
+        const projectLinks = document.querySelectorAll('.project');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        let currentIndex = 0;
+        let videoInterval;
+    
+        function collapseAllCategoriesExcept(buttonToExclude) {
+            categoryButtons.forEach(button => {
+                if (button !== buttonToExclude) {
+                    const buttonTarget = button.getAttribute('data-target');
+                    $(buttonTarget).collapse('hide');
+                }
+            });
+        }
+    
+        function playVideo(index) {
+            const projectLink = projectLinks[index];
+            const categoryButton = projectLink.closest('.category').querySelector('.category-btn');
+            $(categoryButton).collapse('show');
+            collapseAllCategoriesExcept(categoryButton);
+            projectLinks.forEach(link => link.classList.remove('active-project'));
+            projectLink.classList.add('active-project');
+    
+            videoElement.src = videos[index].src;
+            videoTitle.textContent = videos[index].title;
+            videoElement.playbackRate = videos[index].playbackRate; // Set playback speed to 16x
+            setTimeout(() => {
+                videoElement.play();
+            }, 1000); // Add 1-second delay
+            videoCard.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                videoCard.style.transform = 'translateX(0)';
+            }, 50);
+        }
+    
+        function playNextVideo() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            playVideo(currentIndex);
+        }
+    
+        videoElement.addEventListener('ended', () => {
+            setTimeout(playNextVideo, 15000); // 15 seconds interval
+        });
+    
+        projectLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                clearInterval(videoInterval);
+                currentIndex = index;
+                videoElement.playbackRate = 1.0; // Reset playback speed to normal
+                playVideo(index);
+                videoInterval = setInterval(playNextVideo, 15000);
+            });
+        });
+    
+        videoElement.addEventListener('click', () => {
+            clearInterval(videoInterval);
+            overlay.style.display = 'flex';
+            overlayTitle.textContent = videoTitle.textContent;
+            fullVideo.src = videoElement.src;
+            fullVideo.play();
+            fullVideo.muted = false;
+            fullVideo.volume = 1.0; // Increase the sound to normal level
+        });
+    
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            fullVideo.pause();
+            videoInterval = setInterval(playNextVideo, 15000);
+        });
+    
+        $(document).ready(function () {
+            $('.collapse').collapse('hide');
+            const initialCategoryButton = projectLinks[currentIndex].closest('.category').querySelector('.category-btn');
+            $(initialCategoryButton).collapse('show');
+            playVideo(currentIndex);
+            videoInterval = setInterval(playNextVideo, 15000);
+        });
+    
+        setTimeout(() => {
+            videoElement.play();
+        }, 1000);
+    </script>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" class="blog-section">
+    <div class="container">
+        <div style="height: 110px;"></div>
+        <h2 style="text-align: center;">Blogs</h2>
+        <div style="height: 40px;"></div>
+        <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Operating System Code: FCFS, SJF, Round Robin, Priority Queue</h3>
+                        <p class="card-text">Explore various scheduling algorithms in operating systems, including First Come First Serve (FCFS), Shortest Job First (SJF), Round Robin, and Priority Queue.</p>
+                        <a href="https://dhananicodeart.blogspot.com/2023/02/fcfs-with-burst-time.html" class="btn btn-outline-primary" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Data Structure Code: DFS, BFS, and More</h3>
+                        <p class="card-text">Learn about various data structures and algorithms, including Depth First Search (DFS), Breadth First Search (BFS), and more.</p>
+                        <a href="https://dhananicodeart.blogspot.com/2023/02/bfs-traversal.html" class="btn btn-outline-primary" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">C Code: From Scratch to Arrays</h3>
+                        <p class="card-text">Discover the basics of the C programming language, from the fundamentals to working with arrays.</p>
+                        <a href="https://dhananicodeart.blogspot.com/2023/05/getting-started.html" class="btn btn-outline-primary" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+    </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-icons">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jhansisna.22@gmail.com&su=Contact%20from%20Portfolio%20Website&body=Hello%20Jhansi," target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/JhansiDhanabal" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jhansi-d/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100091342160283" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://leetcode.com/u/Isnanj/" target="_blank"><i class="fas fa-laptop-code"></i></a> <!-- Updated icon class -->
+            <a href="https://www.skillrack.com/faces/resume.xhtml?id=462890&key=7418f2ecaea065a2c22b235ed12084b33f36395d" target="_blank"><i class="fas fa-code"></i></a>
+            <a href="https://www.hackerrank.com/profile/jhansisna_22" target="_blank"><i class="fab fa-hackerrank"></i></a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 60 && rect.bottom >= 60) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                navLinks[index].classList.add('active');
+            }
+        });
+    });
+</script>
+
+
+<!-- jQuery for dynamic skills cloud -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+
+
+<footer class="text-center mt-4" style="background-color: black;color: whitesmoke;">
+    Created By Jhansi | © 2024 All rights reserved
+</footer>
+
+</body>
+</html>
